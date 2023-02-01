@@ -1,9 +1,14 @@
 const express = require('express');
 const path = require('path');
+const mongoose = require('mongoose');
 
 const app = express();
 
 const PORT = 3000;
+
+// mongoose.connect(
+//   'mongodb+srv://asoltank:<password>@cluster0.nrotwqe.mongodb.net/?retryWrites=true&w=majority'
+// );
 
 const defaultErr = {
   log: 'Express error handler caught unknown middleware error',
@@ -14,6 +19,7 @@ const defaultErr = {
 app.use(express.static(path.join(__dirname, '../build')));
 
 app.get('/', (req, res) => {
+  //   console.log(entries);
   res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
 });
 
