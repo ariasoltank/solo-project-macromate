@@ -2,11 +2,13 @@
   "name": "solo-project-macromate",
   "version": "1.0.0",
   "description": "A food tracker app for those who would like to track the calorie and macronutrient content of their diet",
-  "main": "index.js",
+  "main": "./client/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server.js",
-    "dev": "webpack-dev-server --mode development"
+    "start": "nodemon server/server.js",
+    "dev": "webpack-dev-server --mode development",
+    "serve": "webpack serve",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -24,8 +26,10 @@
   "dependencies": {
     "express": "^4.18.2",
     "mongoose": "^6.9.0",
+    "nodemon": "^2.0.20",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "webpack": "^5.57.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

@@ -1,11 +1,14 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  mode: 'development',
+  entry: { src: './client/index.js' },
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
   },
+  //
+  //
   module: {
     rules: [
       {
@@ -16,7 +19,7 @@ module.exports = {
           options: {
             presets: [
               ['@babel/preset-env', { targets: 'defaults' }],
-              ['@babel/preset-react', { targets: 'defaults' }],
+              '@babel/preset-react',
             ],
           },
         },
@@ -43,5 +46,27 @@ module.exports = {
         ],
       },
     ],
+  },
+  devServer: {
+    host: 'localhost',
+    port: 8080,
+    // open: true,
+    // compress: true,
+    // enable HMR on the devServer
+    hot: true,
+    // fallback to root for other urls
+    historyApiFallback: true,
+    // loads any static files. not needed but best practice. used for any images or things that you need to render to a page
+    static: {
+      publicPath: '/',
+      directory: path.resolve(__dirname, 'build'),
+    },
+    proxy: {
+      '**': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
 };
