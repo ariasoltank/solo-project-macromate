@@ -1,0 +1,39 @@
+{
+  "name": "solo-project-macromate",
+  "version": "1.0.0",
+  "description": "A food tracker app for those who would like to track the calorie and macronutrient content of their diet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js",
+    "dev": "webpack-dev-server --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ariasoltank/solo-project-macromate.git"
+  },
+  "keywords": [
+    "macros"
+  ],
+  "author": "Aria Soltankhah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ariasoltank/solo-project-macromate/issues"
+  },
+  "homepage": "https://github.com/ariasoltank/solo-project-macromate#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
